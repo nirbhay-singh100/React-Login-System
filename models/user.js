@@ -21,6 +21,9 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    message: [{
+        type: String,
+    }],
     tokens: [{
         token: {
             type: String,
@@ -49,5 +52,5 @@ userSchema.methods.generateAuthToken = async function(){
 //     next();
 // });
 
-const Register = new mongoose.model("RegisteredUser", userSchema);
-module.exports = Register;
+const User = new mongoose.model("user", userSchema);
+module.exports = User;
